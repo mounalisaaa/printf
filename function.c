@@ -9,6 +9,12 @@ int _puts(char *s)
 {
 	int i = 0;
 
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+
 	while (s[i])
 	{
 		_putchar(s[i]);

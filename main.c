@@ -13,15 +13,15 @@ int main(void)
 	int len;
 	int len2;
 
-	len = _printf("Mouna%vadnane\n");
-	/**len2 = printf("Mouna%vadnane\n");*/
+	len = _printf("Mounaxnane\n");
+	len2 = printf("Mounaxnane\n");
 	_printf("Length:[%d, %i]\n", len, len);
-	/**printf("Length:[%d, %i]\n", len2, len2);*/
+	printf("Length:[%d, %i]\n", len2, len2);
 
 	len = _printf("Negative:[%d]\n", -2147483648);
-	/**len2 = printf("Negative:[%d]\n", -2147483648);*/
+	len2 = printf("Negative:[%d]\n", -2147483647);
 	_printf("Length:[%d, %i]\n", len, len);
-	/**printf("Length:[%d, %i]\n", len2, len2);*/
+	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
 	_printf("String:[%s]\n", "I am a string !");
