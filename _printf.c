@@ -1,6 +1,37 @@
 #include "main.h"
-int _puts(char *s);
-void print_integer(int n);
+
+/**
+ * help_printf - helper function
+ * @c: character,
+ * @args: arguments
+ * Return: count.
+ */
+int help_printf(char c, va_list args)
+{
+	int count;
+
+	if (c == 'c')
+	{
+		count = _putchar(va_arg(args, int));
+	}
+	else if (c == 's')
+	{
+		count = _puts(va_arg(args, char *));
+	}
+	else if (c == '%')
+	{
+		count = _putchar('%');
+	}
+	else if (c == 'd' || c == 'i')
+	{
+		count = print_integer(va_arg(args, int));
+	}
+	else
+	{
+		count = _putchar(c);
+	}
+	return (count);
+}
 /**
  * _printf - printf's twin
  * @format: list of types of args.
@@ -11,9 +42,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0;
 	int count = 0;
-	int c;
-	int di;
-	char *s;
 
 	va_start(args, format);
 	while (format && format[i])
@@ -22,33 +50,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			{
-				if (format[i] == 'c')
-				{
-					c = va_arg(args, int);
-					_putchar(c);
-					count++;
-				}
-				else if (format[i] == 's')
-				{
-					s = va_arg(args, char *);
-					count += _puts(s);
-				}
-				else if (format[i] == '%')
-				{
-					_putchar('%');
-					count++;
-				}
-				else if (format[i] == 'd' || format[i] == 'i')
-				{
-					di = va_arg(args, int);
-					print_integer(di);
-					count++;
-				}
-				else
-				{
-					_putchar(format[i]);
-					count++;
-				}
+				count += help_printf(format[i], args);
 			}
 		}
 		else
@@ -60,48 +62,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
-}
-/**
- * _puts - print string.
- * @s: string.
- * Return: the len of the str.
- */
-
-int _puts(char *s)
-{
-	int ind = 0;
-
-	while (s[ind])
-	{
-		_putchar(s[ind]);
-		ind++;
-	}
-	return (ind);
-}
-/**
- * print_integer - fun that prints integer.
- * @n: integer.
- */
-void print_integer(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		if (n == -2147483648)
-		{
-			_putchar('2');
-			n %= 1000000000;
-		}
-		print_integer(-n);
-	}
-	else if (n <= 9)
-	{
-		_putchar(n + '0');
-	}
-
-	else
-	{
-		print_integer(n / 10);
-		print_integer(n % 10);
-	}
 }
