@@ -53,3 +53,14 @@ int print_integer(int n)
 	}
 	return (count);
 }
+int binary(int n)
+{
+	int count = 0;
+
+	if (n > 1)
+	{
+		count = binary(n / 2);
+	}
+	count += _putchar(n % 2 + '0');
+	return (count);
+}

@@ -13,6 +13,10 @@ int main(void)
 	int len;
 	int len2;
 
+    len = _printf("%b\n", 98);
+    len2 = printf("%b\n", 98);
+    _printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
 	len = _printf("Mounaxnane\n");
 	len2 = printf("Mounaxnane\n");
 	_printf("Length:[%d, %i]\n", len, len);

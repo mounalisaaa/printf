@@ -26,6 +26,10 @@ int help_printf(char c, va_list args)
 	{
 		count = print_integer(va_arg(args, int));
 	}
+	else if (c == 'b')
+	{
+		count = binary(va_arg(args, unsigned int));
+	}
 	else
 	{
 		count += _putchar('%');
