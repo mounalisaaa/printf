@@ -10,28 +10,28 @@
  */
 int main(void)
 {
-int len;
-int len2;
+	int len;
+	int len2;
 
-len = _printf("Mouna%kadnane\n");
-len2 = printf("Mouna%kadnane\n");
-_printf("Length:[%d, %i]\n", len, len);
-printf("Length:[%d, %i]\n", len2, len2);
+	len = _printf("Mouna%vadnane\n");
+	/**len2 = printf("Mouna%vadnane\n");*/
+	_printf("Length:[%d, %i]\n", len, len);
+	/**printf("Length:[%d, %i]\n", len2, len2);*/
 
-len = _printf("Negative:[%d]\n", -2147483648);
-len2 = printf("Negative:[%d]\n", -2147483648);
-_printf("Length:[%d, %i]\n", len, len);
-printf("Length:[%d, %i]\n", len2, len2);
-_printf("Character:[%c]\n", 'H');
-printf("Character:[%c]\n", 'H');
-_printf("String:[%s]\n", "I am a string !");
-printf("String:[%s]\n", "I am a string !");
-len = _printf("Percent:[%%]\n");
-len2 = printf("Percent:[%%]\n");
-_printf("Len:[%d]\n", len);
-_printf("");
-printf("Len:[%d]\n", len2);
-_printf("\n");
+	len = _printf("Negative:[%d]\n", -2147483648);
+	/**len2 = printf("Negative:[%d]\n", -2147483648);*/
+	_printf("Length:[%d, %i]\n", len, len);
+	/**printf("Length:[%d, %i]\n", len2, len2);*/
+	_printf("Character:[%c]\n", 'H');
+	printf("Character:[%c]\n", 'H');
+	_printf("String:[%s]\n", "I am a string !");
+	printf("String:[%s]\n", "I am a string !");
+	len = _printf("Percent:[%%]\n");
+	len2 = printf("Percent:[%%]\n");
+	_printf("Len:[%d]\n", len);
+	_printf("");
+	printf("Len:[%d]\n", len2);
+	_printf("\n");
 
-return (0);
+	return (0);
 }

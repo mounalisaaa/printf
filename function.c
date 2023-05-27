@@ -7,14 +7,14 @@
 
 int _puts(char *s)
 {
-	int ind = 0;
+	int i = 0;
 
-	while (s[ind])
+	while (s[i])
 	{
-		_putchar(s[ind]);
-		ind++;
+		_putchar(s[i]);
+		i++;
 	}
-	return (ind);
+	return (i);
 }
 /**
  * print_integer - fun that prints integer.
@@ -35,7 +35,7 @@ int print_integer(int n)
 		}
 		count += print_integer(-n);
 	}
-	else if (n <= 9)
+	else if (n >= 0 && n <= 9)
 	{
 		count += _putchar(n + '0');
 	}
@@ -43,7 +43,7 @@ int print_integer(int n)
 	else
 	{
 		count += print_integer(n / 10);
-		count += _putchar(n % 10 + 48);
+		count += _putchar((n % 10) + '0');
 	}
 	return (count);
 }
