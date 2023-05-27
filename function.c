@@ -53,7 +53,7 @@ int print_integer(int n)
 	}
 	return (count);
 }
-int binary(int n)
+int binary(unsigned int n)
 {
 	int count = 0;
 

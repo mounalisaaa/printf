@@ -13,8 +13,8 @@ int main(void)
 	int len;
 	int len2;
 
-    len = _printf("%b\n", 98);
-    len2 = printf("%b\n", 98);
+    len = _printf("%b\n", -4);
+    len2 = printf("%b\n", -4);
     _printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 	len = _printf("Mounaxnane\n");

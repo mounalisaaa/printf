@@ -10,6 +10,6 @@ int _putchar(char c);
 int help_printf(char c, va_list args);
 int _puts(char *s);
 int print_integer(int n);
-int binary(int n);
+int binary(unsigned int n);
 
 #endif
