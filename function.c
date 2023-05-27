@@ -53,6 +53,11 @@ int print_integer(int n)
 	}
 	return (count);
 }
+/**
+ * binary - convert unsigned integer to binary.
+ * @n: unsigned int.
+ * Return: count.
+ */
 int binary(unsigned int n)
 {
 	int count = 0;
@@ -62,5 +67,75 @@ int binary(unsigned int n)
 		count = binary(n / 2);
 	}
 	count += _putchar(n % 2 + '0');
+	return (count);
+}
+/**
+ * print_unsigned_integer - print unsigned integer.
+ * @n: unsigned integer.
+ * Return: count.
+ */
+int print_unsigned_integer(unsigned int n)
+{
+	int count = 0;
+
+	if (n <= 9)
+	{
+		count += _putchar(n + '0');
+	}
+	else
+	{
+		count += print_unsigned_integer(n / 10);
+		count += _putchar(n % 10 + '0');
+	}
+	return (count);
+}
+/**
+ * print_octal - convert unsigned int into octal.
+ * @n: unsigned int.
+ * Return: count.
+ */
+int print_octal(unsigned int n)
+{
+	int count = 0;
+
+	if (n > 7)
+	{
+		count = print_octal(n / 8);
+	}
+	count += _putchar(n % 8 + '0');
+	return (count);
+}
+int print_HEX(unsigned int n)
+{
+	int count = 0;
+	if (n > 15)
+	{
+		count += print_HEX(n / 16);
+	}
+	if (n % 16 < 10)
+	{
+		count += _putchar(n % 16 + '0');
+	}
+	else
+	{
+		count += _putchar(n % 16 - 10 + 'A');
+	}
+	return (count);
+}
+int print_hex(unsigned int n)
+{
+	int count = 0;
+	if (n > 15)
+	{
+		count += print_hex(n / 16);
+	}
+	if (n % 16 < 10)
+	{
+		count += _putchar(n % 16 + '0');
+	}
+	else
+	{
+		count += _putchar(n % 16 - 10 + 'a');
+	}
 	return (count);
 }

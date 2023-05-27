@@ -12,10 +12,20 @@ int main(void)
 {
 	int len;
 	int len2;
+	unsigned int ui;
 
-    len = _printf("%b\n", -4);
-    len2 = printf("%b\n", -4);
-    _printf("Length:[%d, %i]\n", len, len);
+	ui = (unsigned int)INT_MAX + 1024;
+	len = _printf("Unsigned hexadecimal:[%x, %X]\n", ui, 123);
+	len2 = printf("Unsigned hexadecimal:[%x, %X]\n", ui, 123);
+	_printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+	len = _printf("Unsigned octal:[%o]\n", ui);
+	len2 = printf("Unsigned octal:[%o]\n", ui);
+	_printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+	len = _printf("%b\n", -4);
+	len2 = printf("%b\n", -4);
+	_printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 	len = _printf("Mounaxnane\n");
 	len2 = printf("Mounaxnane\n");

@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * help_printf - helper function
  * @c: character,
@@ -29,6 +28,22 @@ int help_printf(char c, va_list args)
 	else if (c == 'b')
 	{
 		count = binary(va_arg(args, unsigned int));
+	}
+	else if (c == 'u')
+	{
+		count = print_unsigned_integer(va_arg(args, unsigned int));
+	}
+	else if (c == 'o')
+	{
+		count = print_octal(va_arg(args, unsigned int));
+	}
+	else if (c == 'x')
+	{
+		count = print_hex(va_arg(args, unsigned int));
+	}
+	else if (c == 'X')
+	{
+		count = print_HEX(va_arg(args, unsigned int));
 	}
 	else
 	{
