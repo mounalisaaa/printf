@@ -44,7 +44,11 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	va_start(args, format);
-	if (format[i] == '%' && !format[1])
+	if (format[0] == '%' && !format[1])
+	{
+		return (-1);
+	}
+	if (format[0] == '%' && format[1] && !format[2])
 	{
 		return (-1);
 	}
@@ -59,8 +63,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
-			count++;
+			count += _putchar(format[i]);
 		}
 		i++;
 	}

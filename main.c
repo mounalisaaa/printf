@@ -13,9 +13,9 @@ int main(void)
 int len;
 int len2;
 
-len = _printf("%");
-len2 = printf("%");
-_printf("Length:[%d, %i]\n", NULL, len);
+len = _printf("% ");
+len2 = printf("% ");
+_printf("Length:[%d, %i]\n", len, len);
 printf("Length:[%d, %i]\n", len2, len2);
 
 len = _printf("Negative:[%d]\n", -2147483648);
