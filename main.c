@@ -13,8 +13,8 @@ int main(void)
 int len;
 int len2;
 
-len = _printf("% ");
-len2 = printf("% ");
+len = _printf("Mouna%kadnane\n");
+len2 = printf("Mouna%kadnane\n");
 _printf("Length:[%d, %i]\n", len, len);
 printf("Length:[%d, %i]\n", len2, len2);
 

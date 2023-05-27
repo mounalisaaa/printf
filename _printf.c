@@ -8,7 +8,7 @@
  */
 int help_printf(char c, va_list args)
 {
-	int count;
+	int count = 0;
 
 	if (c == 'c')
 	{
@@ -28,7 +28,8 @@ int help_printf(char c, va_list args)
 	}
 	else
 	{
-		count = _putchar(c);
+		count += _putchar('%');
+		count += _putchar(c);
 	}
 	return (count);
 }
