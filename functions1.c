@@ -43,6 +43,8 @@ int print_unpritable(char *str)
 	int count = 0;
 	int ascii;
 
+	if (!str)
+		return (_puts("(null)"));
 	while (*str)
 	{
 		if (*str > 32 && *str < 127)
