@@ -10,41 +10,23 @@ int help_printf(char c, va_list args)
 	int count = 0;
 
 	if (c == 'c')
-	{
 		count = _putchar(va_arg(args, int));
-	}
 	else if (c == 's')
-	{
 		count = _puts(va_arg(args, char *));
-	}
 	else if (c == '%')
-	{
 		count = _putchar('%');
-	}
 	else if (c == 'd' || c == 'i')
-	{
 		count = print_integer(va_arg(args, int));
-	}
 	else if (c == 'b')
-	{
 		count = binary(va_arg(args, unsigned int));
-	}
 	else if (c == 'u')
-	{
 		count = print_unsigned_integer(va_arg(args, unsigned int));
-	}
 	else if (c == 'o')
-	{
 		count = print_octal(va_arg(args, unsigned int));
-	}
 	else if (c == 'x')
-	{
 		count = print_hex(va_arg(args, unsigned int));
-	}
 	else if (c == 'X')
-	{
 		count = print_HEX(va_arg(args, unsigned int));
-	}
 	else
 	{
 		count += _putchar('%');

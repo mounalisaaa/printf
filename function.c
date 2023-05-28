@@ -105,37 +105,3 @@ int print_octal(unsigned int n)
 	count += _putchar(n % 8 + '0');
 	return (count);
 }
-int print_HEX(unsigned int n)
-{
-	int count = 0;
-	if (n > 15)
-	{
-		count += print_HEX(n / 16);
-	}
-	if (n % 16 < 10)
-	{
-		count += _putchar(n % 16 + '0');
-	}
-	else
-	{
-		count += _putchar(n % 16 - 10 + 'A');
-	}
-	return (count);
-}
-int print_hex(unsigned int n)
-{
-	int count = 0;
-	if (n > 15)
-	{
-		count += print_hex(n / 16);
-	}
-	if (n % 16 < 10)
-	{
-		count += _putchar(n % 16 + '0');
-	}
-	else
-	{
-		count += _putchar(n % 16 - 10 + 'a');
-	}
-	return (count);
-}
