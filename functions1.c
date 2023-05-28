@@ -33,7 +33,11 @@ int print_hex(unsigned int n)
 		count += _putchar(n % 16 - 10 + 'a');
 	return (count);
 }
-
+/**
+ * print_unpritable - print string.
+ * @str: str.
+ * Return: count.
+ */
 int print_unpritable(char *str)
 {
 	int count = 0;
