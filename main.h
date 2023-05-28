@@ -15,5 +15,6 @@ int print_unsigned_integer(unsigned int n);
 int print_octal(unsigned int n);
 int print_HEX(unsigned int n);
 int print_hex(unsigned int n);
+int print_unpritable(char *str);
 
 #endif

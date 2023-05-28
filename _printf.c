@@ -27,6 +27,8 @@ int help_printf(char c, va_list args)
 		count = print_hex(va_arg(args, unsigned int));
 	else if (c == 'X')
 		count = print_HEX(va_arg(args, unsigned int));
+	else if (c == 'S')
+		count = print_unpritable(va_arg(args, char *));
 	else
 	{
 		count += _putchar('%');
@@ -48,13 +50,9 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
-	{
 		return (-1);
-	}
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	{
 		return (-1);
-	}
 
 	while (format && format[i])
 	{
