@@ -47,7 +47,7 @@ int print_unpritable(char *str)
 		return (_puts("(null)"));
 	while (*str)
 	{
-		if (*str > 32 && *str < 127)
+		if (*str >= 32 && *str < 127)
 		{
 			count += _putchar(*str);
 		}
@@ -63,4 +63,3 @@ int print_unpritable(char *str)
 	}
 	return (count);
 }
-
