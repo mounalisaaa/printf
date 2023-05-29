@@ -14,14 +14,12 @@ int main(void)
 	int len2;
 	unsigned int ui;
 	void *addr;
-	char s[] = "Hello";
-    int p;
+    
 
 	addr = (void *)0x7ffe637541f0;
 	ui = (unsigned int)INT_MAX + 1024;
 
-    p = rot13(s);
-    _printf("%R\n", p);
+    printf("%R\n", "ADnane");
 	len = _printf("Address:[%p]\n", addr);
 	len2 = printf("Address:[%p]\n", addr);
 	_printf("Length:[%d, %i]\n", len, len);
