@@ -16,6 +16,8 @@ int print_octal(unsigned int n);
 int print_HEX(unsigned int n);
 int print_hex(unsigned int n);
 int print_unpritable(char *str);
+int print_hex_l(unsigned long int n);
+int memory_address(void *ptr);
 int rot13(char *s);
 
 #endif

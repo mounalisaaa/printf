@@ -29,8 +29,8 @@ int help_printf(char c, va_list args)
 		count = print_HEX(va_arg(args, unsigned int));
 	else if (c == 'S')
 		count = print_unpritable(va_arg(args, char *));
-	else if (c == 'R')
-		count = rot13(va_arg(args, char *));
+	else if (c == 'p')
+		count = memory_address(va_arg(args, void *));
 	else
 	{
 		count += _putchar('%');

@@ -13,8 +13,14 @@ int main(void)
 	int len;
 	int len2;
 	unsigned int ui;
+	void *addr;
 
+	addr = (void *)0x7ffe637541f0;
 	ui = (unsigned int)INT_MAX + 1024;
+	len = _printf("Address:[%p]\n", addr);
+	len2 = printf("Address:[%p]\n", addr);
+	_printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("%S\n", "Best\nSchool");
 	len = _printf("Unsigned hexadecimal:[%x, %X]\n", ui, 123);
 	len2 = printf("Unsigned hexadecimal:[%x, %X]\n", ui, 123);
@@ -39,14 +45,6 @@ int main(void)
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
-	_printf("String:[%s]\n", "I am a string !");
-	printf("String:[%s]\n", "I am a string !");
-	len = _printf("Percent:[%%]\n");
-	len2 = printf("Percent:[%%]\n");
-	_printf("Len:[%d]\n", len);
-	_printf("");
-	printf("Len:[%d]\n", len2);
-	_printf("\n");
 
 	return (0);
 }

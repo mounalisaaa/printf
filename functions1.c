@@ -64,23 +64,44 @@ int print_unpritable(char *str)
 	return (count);
 }
 /**
- * rot13 - encryption algorithm.
- * @s: string
- * Return: count.
+ * print_hex_l - convert decimal to hexadecimal with lowercase
+ * @n: integer.
+ * Return: count
  */
-int rot13(char *s)
+int print_hex_l(unsigned long n)
 {
+	int count = 0, r, j;
+	char arr[64];
 	int i = 0;
-	int count = 0;
+	char hex[] = "0123456789abcdef";
 
-	while (s[i])
+	while (n)
 	{
-		if ((s[i] >= 'A' && s[i] <= 'M') || (s[i] >= 'a' && s[i] <= 'm'))
-			count += _putchar(s[i] += 13);
-		if ((s[i] >= 'N' && s[i] <= 'Z') || (s[i] >= 'n' && s[i] <= 'z'))
-			count += _putchar(s[i] -= 13);
-
+		r = n % 16;
+		arr[i] = r;
+		n = n / 16;
 		i++;
 	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		count += _putchar(hex[(int)arr[j]]);
+	}
+	return (count);
+}
+/**
+ * memory_address - prints the memory address.
+ * @ptr: pointer.
+ * Return: count.
+ */
+int memory_address(void *ptr)
+{
+	int count = 0;
+	long int n = (unsigned long)(ptr);
+
+	if (!ptr)
+		return (_puts("(null)"));
+	count += _puts("0x");
+	count += print_hex_l(n);
+
 	return (count);
 }
