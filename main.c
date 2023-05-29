@@ -15,7 +15,6 @@ int main(void)
 	unsigned int ui;
 
 	ui = (unsigned int)INT_MAX + 1024;
-	
 	_printf("%S\n", "Best\nSchool");
 	len = _printf("Unsigned hexadecimal:[%x, %X]\n", ui, 123);
 	len2 = printf("Unsigned hexadecimal:[%x, %X]\n", ui, 123);
