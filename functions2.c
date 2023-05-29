@@ -4,43 +4,29 @@
  * @s: string
  * Return: count.
  */
-/*int rot13(char *s)
+int rot13(char *s)
 {
-	int i = 0;
 	int count = 0;
 
 	if (!s)
 		return (_puts("(null)"));
-	while (s[i])
-	{
-		if ((s[i] >= 'A' && s[i] <= 'M') || (s[i] >= 'a' && s[i] <= 'm'))
-			count += _putchar(s[i] += 13);
-		else if ((s[i] >= 'N' && s[i] <= 'Z') || (s[i] >= 'n' && s[i] <= 'z'))
-			count += _putchar(s[i] -= 13);
-		else
-			count += _putchar(s[i]);
 
-		i++;
-	}
-	return (count);
-}*/
-int rot13(char *s)
-{
-	int i;
-	int j;
-	char data1[] = "ABCDEAFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		for (j = 0; data1[j] != '\0'; j++)
+		if ((*s >= 65 && *s <= 90) || (*s >= 97 && *s <= 122))
 		{
-			if (s[i] == data1[j])
-			{
-				s[i] = datarot[j];
-				break;
-			}
+			if (*s <= 77 || *s <= 109)
+				count += _putchar(*s + 13);
+			else
+				count += _putchar(*s - 13);
 		}
+		else
+		{
+			count += _putchar(*s);
+		}
+
+		s++;
 	}
-	return (_puts(s));
+
+	return (count);
 }
