@@ -9,7 +9,7 @@ int rot13(char *s)
 	int i = 0;
 	int count = 0;
 	if (!s)
-		return (_puts("(nil)"));
+		return (_puts("(null)"));
 	while (s[i])
 	{
 		if ((s[i] >= 'A' && s[i] <= 'M') || (s[i] >= 'a' && s[i] <= 'm'))
