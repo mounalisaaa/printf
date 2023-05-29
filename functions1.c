@@ -99,7 +99,7 @@ int memory_address(void *ptr)
 	long int n = (unsigned long)(ptr);
 
 	if (!ptr)
-		return (_puts("(null)"));
+		return (_puts("(nil)"));
 	count += _puts("0x");
 	count += print_hex_l(n);
 
