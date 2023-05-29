@@ -1,4 +1,4 @@
-#include"main.h"
+#include "main.h"
 /**
  * rot13 - encryption algorithm.
  * @s: string
@@ -8,6 +8,7 @@ int rot13(char *s)
 {
 	int i = 0;
 	int count = 0;
+
 	if (!s)
 		return (_puts("(null)"));
 	while (s[i])
@@ -16,6 +17,8 @@ int rot13(char *s)
 			count += _putchar(s[i] += 13);
 		if ((s[i] >= 'N' && s[i] <= 'Z') || (s[i] >= 'n' && s[i] <= 'z'))
 			count += _putchar(s[i] -= 13);
+		else
+			count += _putchar(s[i]);
 
 		i++;
 	}
