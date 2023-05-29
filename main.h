@@ -18,6 +18,7 @@ int print_hex(unsigned int n);
 int print_unpritable(char *str);
 int print_hex_l(unsigned long int n);
 int memory_address(void *ptr);
+int print_rev(char *s);
 int rot13(char *s);
 
 #endif
