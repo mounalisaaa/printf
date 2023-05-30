@@ -1,5 +1,21 @@
 #include "main.h"
 /**
+ * print_octal - convert unsigned int into octal.
+ * @n: unsigned int.
+ * Return: count.
+ */
+int print_octal(unsigned int n)
+{
+	int count = 0;
+
+	if (n > 7)
+	{
+		count = print_octal(n / 8);
+	}
+	count += _putchar(n % 8 + '0');
+	return (count);
+}
+/**
  * print_HEX - convert decimal to hexadecimal with uppercase
  * @n: integer.
  * Return: count
@@ -86,22 +102,5 @@ int print_hex_l(unsigned long n)
 	{
 		count += _putchar(hex[(int)arr[j]]);
 	}
-	return (count);
-}
-/**
- * memory_address - prints the memory address.
- * @ptr: pointer.
- * Return: count.
- */
-int memory_address(void *ptr)
-{
-	int count = 0;
-	long int n = (unsigned long)(ptr);
-
-	if (!ptr)
-		return (_puts("(nil)"));
-	count += _puts("0x");
-	count += print_hex_l(n);
-
 	return (count);
 }

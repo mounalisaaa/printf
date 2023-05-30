@@ -1,1 +1,1 @@
-bo3o
+"Teamwork makes the dream work."

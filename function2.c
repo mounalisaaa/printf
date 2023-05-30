@@ -1,5 +1,22 @@
 #include "main.h"
 /**
+ * memory_address - prints the memory address.
+ * @ptr: pointer.
+ * Return: count.
+ */
+int memory_address(void *ptr)
+{
+	int count = 0;
+	long int n = (unsigned long)(ptr);
+
+	if (!ptr)
+		return (_puts("(nil)"));
+	count += _puts("0x");
+	count += print_hex_l(n);
+
+	return (count);
+}
+/**
  * rot13 - encryption algorithm.
  * @s: string
  * Return: count.
