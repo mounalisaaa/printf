@@ -1,5 +1,15 @@
 #include "main.h"
 /**
+ * _putchar - print char
+ * @c: character.
+ * Return: write.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
  * _puts - print string.
  * @s: string.
  * Return: the len of the str.
@@ -87,21 +97,5 @@ int print_unsigned_integer(unsigned int n)
 		count += print_unsigned_integer(n / 10);
 		count += _putchar(n % 10 + '0');
 	}
-	return (count);
-}
-/**
- * print_octal - convert unsigned int into octal.
- * @n: unsigned int.
- * Return: count.
- */
-int print_octal(unsigned int n)
-{
-	int count = 0;
-
-	if (n > 7)
-	{
-		count = print_octal(n / 8);
-	}
-	count += _putchar(n % 8 + '0');
 	return (count);
 }
