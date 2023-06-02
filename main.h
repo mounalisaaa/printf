@@ -22,5 +22,6 @@ int print_hex_l(unsigned long int n);
 int memory_address(void *ptr);
 int print_rev(char *s);
 int rot13(char *s);
+int flags(char c, va_list args);
 
 #endif

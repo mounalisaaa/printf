@@ -66,7 +66,13 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			{
-				count += help_printf(format[i], args);
+				if (format[i] == '+')
+				{
+					i++;
+					count += flags(format[i], args);
+				}
+				else
+					count += help_printf(format[i], args);
 			}
 		}
 		else
