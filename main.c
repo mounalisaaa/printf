@@ -17,9 +17,7 @@ int main(void)
 
 	addr = (void *)0x7ffe637541f0;
 	ui = (unsigned int)INT_MAX + 1024;
-	_printf("%+d\n", -56);
 	_printf("%+i\n", 56);
-	_printf("%d\n", 56);
 	_printf("%R\n", "Mounalisaa");
 	len = _printf("Address:[%p]\n", addr);
 	len2 = printf("Address:[%p]\n", addr);

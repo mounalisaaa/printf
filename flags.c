@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * flags - function that adds + to an integer.
+ * @c: char
+ * @args: args
+ * Return: count.
+*/
 int flags(char c, va_list args)
 {
 	int count = 0;
